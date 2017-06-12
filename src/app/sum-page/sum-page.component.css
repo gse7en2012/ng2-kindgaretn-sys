@@ -1,0 +1,23 @@
+.sum-page{background: #f0f1f5;margin-bottom: 80px;}
+
+.sum-header{background: #e7f3ff;text-align: center;height:120px;line-height: 120px;font-size: 32px;color:#3391e9;}
+
+#sum-list{margin-top: 0}
+
+#sum-list .weui-cell__bd{color: #555;}
+#sum-list .weui-cell p{line-height: 26px;}
+#sum-list .icon{width: 26px;height:26px;position: relative;top: 3px;margin-right: 10px;}
+
+.sum-btn-box{padding: 30px 20px;}
+.sum-btn-box .weui-btn_primary{background-color:#3391e9; }
+
+.weui-cells{overflow: auto;}
+
+
+.weui-grids{background: #fff;margin: 0 -1px;}
+.weui-grid__icon{width: 30px;height:30px;}
+.weui-grid__label{font-size: 16px;color:#555}
+.sum-grid-title{border-top: 1px solid #d9d9d9;line-height: 36px;padding: 0 10px;color: #777;font-size: 16px;background: #fff;}
+
+
+/*input[type='date'], input[type='time'] { -webkit-appearance: none;}*/

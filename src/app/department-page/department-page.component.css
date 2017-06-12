@@ -1,0 +1,10 @@
+.department-page{background: #f0f1f5;margin-bottom: 80px;max-width: 750px;}
+
+.department-header{background: #e7f3ff;text-align: center;height:120px;display: flex;align-items: center;text-align: center;}
+.department-header .box{flex: 1;}
+.department-header .title{font-size: 32px;color:#3391e9;}
+.department-header .sub{color:#999;font-size: 18px;}
+
+#class-grid{background: #fff;}
+.weui-grid__icon{width: 30px;height:30px;}
+.weui-grid__label{font-size: 16px;color:#555}

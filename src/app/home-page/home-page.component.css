@@ -1,0 +1,19 @@
+.home-page{background: #f0f1f5;margin-bottom: 80px;}
+
+.cover-box{width: 100%;height:0;padding-bottom: 60%;overflow: hidden;position: relative;background: #e7f3ff;}
+.cover-box img{width: 100%;position: absolute;bottom: 0;left:0;}
+.cover-txt{position: absolute;top:10px;left:10px;color: #fff;line-height: 30px;font-size: 14px;}
+.cover-box .cover-avatar{width: 28px;height:28px;border-radius: 50%;border:1px solid #fff;position: static;float: left;margin-right: 5px;}
+
+#mine{margin-top: 0;margin-bottom: 15px;}
+.avatar{border-radius: 50%;width: 46px;height: 46px;margin: 4px 10px 4px 0;float:left;}
+
+.rank{float: left;line-height: 45px;margin: 4px 8px 4px 0;font-size: 18px;color: #555;}
+.name{font-size: 18px;color: #555;}
+.total{color: #9f9f9f;font-size: 15px;position: relative;left: 4px;top: -2px;}
+.intro{font-size: 14px;color: #aaa;margin-top: -1px;}
+.point{font-size: 24px;color: #02bc00;}
+.lv{font-size: 12px;display: inline-block;background: #f8ad1c;color: #fff;padding: 0 4px;margin-left: 8px;position: relative;top: -3px;border-radius: 2px;}
+.point.orange{color: #fea606;border-radius: 20px;}
+
+.tips{font-size: 14px;color: #9b9b9b;line-height: 2.2;padding-left: 15px;}
