@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<main>
+  <router-outlet></router-outlet>
+  <nav class="bottom-nav">
+    <a [routerLink]="['/home']" routerLinkActive="cur" class="tab-home">
+       <img src='assets/img/tab_home.png' class="icon">
+       <img src='assets/img/tab_home_cur.png' class="icon cur">
+       <span>首页</span>
+    </a>
+    <a [routerLink]="['/sum']" routerLinkActive="cur" [routerLinkActiveOptions]="{ exact: false }" class="tab-sum">
+       <img src='assets/img/tab_sum.png' class="icon">
+       <img src='assets/img/tab_sum_cur.png' class="icon cur">
+       <span>统计</span>
+    </a>
+    <a [routerLink]="['/me']" routerLinkActive="cur" class="tab-me">
+       <img src='assets/img/tab_me.png' class="icon">
+       <img src='assets/img/tab_me_cur.png' class="icon cur">
+       <span>我</span>
+    </a>
+  </nav>
+</main>

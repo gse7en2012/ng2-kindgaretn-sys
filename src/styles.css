@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/weui.min.css';
+@import 'assets/normalize.css';
+
+body{background: #f0f1f5;}
+main{
+    max-width: 750px;
+   margin: 0 auto;
+    width: 100%;
+    left: 50%;
+}
+
+
+
+.sk-wave {
+  margin:100px auto;
+  width: 100px;
+  height: 80px;
+  text-align: center;
+  font-size: 10px; }
+  .sk-wave .sk-rect {
+    background-color: #3391e8;
+    height: 100%;
+    width: 12px;
+    display: inline-block;
+    -webkit-animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+            animation: sk-waveStretchDelay 1.2s infinite ease-in-out; }
+  .sk-wave .sk-rect1 {
+    -webkit-animation-delay: -1.2s;
+            animation-delay: -1.2s; }
+  .sk-wave .sk-rect2 {
+    -webkit-animation-delay: -1.1s;
+            animation-delay: -1.1s; }
+  .sk-wave .sk-rect3 {
+    -webkit-animation-delay: -1s;
+            animation-delay: -1s; }
+  .sk-wave .sk-rect4 {
+    -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s; }
+  .sk-wave .sk-rect5 {
+    -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s; }
+@-webkit-keyframes sk-waveStretchDelay {
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4); }
+  20% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
+@keyframes sk-waveStretchDelay {
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4); }
+  20% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
+
+
+/*reset weui*/
+/*.weui-cell:before{left: 0;}*/
+
+.weui-picker__action{color: #3391e9;}
+.weui-cell_access .weui-cell__ft:after{height: 8px;width: 8px;}
