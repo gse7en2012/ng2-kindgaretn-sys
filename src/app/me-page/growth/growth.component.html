@@ -1,0 +1,24 @@
+<div class="growth-page">
+  <div class="growth-result-header">
+    <div class="box">
+      <p class="title">{{title}}的成长值</p>
+    </div>
+  </div>
+
+  <div class="weui-cells">
+    <div class="weui-cell weui-cell_access" *ngFor="let record of recordList;let i=index"  >
+      <a class="weui-cell__bd" [routerLink]="['/home/personal/'+record.growthvalue_recipient_id]">
+        <p>{{i+1}}.[{{record.growthvalue_recipient}}]{{record.growthvalue_note}}</p>
+      </a>
+      <div class="weui-cell__ft">
+        +{{record.growthvalue_value}}
+        <a (click)="cancelGrowth(record.growthvalue_id)" *ngIf="showCancel" class="cancel-btn">撤销记录</a>  
+      </div>
+    </div>
+    <div class="weui-cell" *ngIf="recordList.length==0">
+      <div class="weui-cell__bd">
+        <p>暂无数据！</p>
+      </div>
+    </div>
+  </div>
+</div>

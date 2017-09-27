@@ -1,36 +1,36 @@
 <div class="me-page">
   <div class="cover-box">
-    <img src="assets/img/bg2.jpg" class="cover">
-    <div class="cover-txt">
-      <img src="https://s1.tuchong.com/sites/134/1343094/logo_small.jpg?1" class="cover-avatar">封面设置
+    <img [src]="userInfo?.employee_background_url" class="cover">
+    <div class="cover-txt" id="cover-upload">
+      <img [src]="userInfo?.employee_head_imgurl" class="cover-avatar">封面设置
     </div>
   </div>
 
 
   <div class="weui-cells" id="mine">
     <div class="weui-cell">
-      <div class="weui-cell__hd"><img src="https://s1.tuchong.com/sites/000/624/logo_large.jpg?2" class="avatar"></div>
+      <div class="weui-cell__hd"><img [src]="userInfo?.employee_head_imgurl" class="avatar"></div>
       <div class="weui-cell__bd">
-        <p class="name">Gseven<span class="lv">Lv.90</span></p>
+        <p class="name">{{userInfo?.employee_name}}<span class="lv">Lv.{{userInfo?.employee_level}}</span></p>
         <div class="weui-progress" id="exp-bar">
           <div class="weui-progress__bar">
-            <div class="weui-progress__inner-bar js_progress" style="width: 50%;"></div>
+            <div class="weui-progress__inner-bar js_progress" [style.width]="userInfo?.growth_percent"></div>
           </div>
         </div>
-        <p class="intro">还差25点成长值升到下一级</p>
+        <p class="intro">还差{{userInfo?.level_need_growth_value}}点成长值升到下一级</p>
       </div>
     </div>
   </div>
 
 
 
-<div class="weui-cells" id="list-1">
+  <div class="weui-cells" id="list-1">
     <div class="weui-cell">
       <div class="weui-cell__hd">
         <img src="assets/img/me/name.png" class="icon">
       </div>
       <div class="weui-cell__bd">
-        <p>东莞市桥头星报幼儿园</p>
+        <p>{{userInfo?.employee_kindergarten_name}}</p>
       </div>
       <div class="weui-cell__ft"></div>
     </div>
@@ -38,8 +38,8 @@
       <div class="weui-cell__hd">
         <img src="assets/img/me/department.png" class="icon">
       </div>
-      <a class="weui-cell__bd"  [routerLink]="['/me/department']">
-        <p>部门分类</p>
+      <a class="weui-cell__bd" [routerLink]="['/me/department']">
+        <p>所在部门：{{userInfo?.employee_department_name}}</p>
       </a>
       <div class="weui-cell__ft"></div>
     </div>
@@ -48,7 +48,7 @@
         <img src="assets/img/me/rank.png" class="icon">
       </div>
       <div class="weui-cell__bd">
-        <p>总排名：30</p>
+        <p>总排名：{{userInfo?.employee_ranking}}</p>
       </div>
       <div class="weui-cell__ft"></div>
     </div>
@@ -57,39 +57,39 @@
         <img src="assets/img/me/growth.png" class="icon">
       </div>
       <div class="weui-cell__bd">
-        <p>成长值：140</p>
+        <p>成长值：{{userInfo?.employee_growth_value}}</p>
       </div>
       <div class="weui-cell__ft"></div>
     </div>
   </div>
 
 
-<div class="weui-cells" id="list-2">
+  <div class="weui-cells" id="list-2">
     <div class="weui-cell weui-cell_access">
       <div class="weui-cell__hd">
         <img src="assets/img/me/gain.png" class="icon">
       </div>
-      <div class="weui-cell__bd">
+      <a class="weui-cell__bd" [routerLink]="['/me/growth/gain/'+userInfo?.employee_id]">
         <p>我获得的成长值</p>
-      </div>
+      </a>
       <div class="weui-cell__ft"></div>
     </div>
     <div class="weui-cell weui-cell_access">
       <div class="weui-cell__hd">
         <img src="assets/img/me/gift.png" class="icon">
       </div>
-      <div class="weui-cell__bd">
+      <a class="weui-cell__bd" [routerLink]="['/me/growth/donor/'+userInfo?.employee_id]">
         <p>我赠送的成长值</p>
-      </div>
+      </a>
       <div class="weui-cell__ft"></div>
     </div>
     <div class="weui-cell weui-cell_access">
       <div class="weui-cell__hd">
         <img src="assets/img/me/timeline.png" class="icon">
       </div>
-      <div class="weui-cell__bd">
+      <a class="weui-cell__bd" [routerLink]="['/me/timeline']">
         <p>全部动态</p>
-      </div>
+      </a>
       <div class="weui-cell__ft"></div>
     </div>
     <div class="weui-cell weui-cell_access">
@@ -103,8 +103,8 @@
     </div>
   </div>
 
-<div class="weui-cells" id="list-3">
-    <div class="weui-cell weui-cell_access">
+  <div class="weui-cells" id="list-3" *ngIf="isGm" >
+    <div class="weui-cell weui-cell_access" (click)="chooseGroupList()">
       <div class="weui-cell__hd">
         <img src="assets/img/me/org.png" class="icon">
       </div>
@@ -118,7 +118,7 @@
         <img src="assets/img/me/account.png" class="icon">
       </div>
       <div class="weui-cell__bd">
-        <p>账号：gseven 密码：132412</p>
+        <p>账号：{{userInfo?.kindergartengm_account}} 密码：{{userInfo?.kindergartengm_password}}</p>
       </div>
       <div class="weui-cell__ft"></div>
     </div>
@@ -127,12 +127,12 @@
         <img src="assets/img/me/url.png" class="icon">
       </div>
       <div class="weui-cell__bd">
-        <p>后台网址：http://www.baidu.com</p>
+        <p>后台网址：{{userInfo?.kindergartengm_domain}}</p>
       </div>
       <div class="weui-cell__ft"></div>
     </div>
-  
+
   </div>
 
-<div class="weui-cells"></div>
+  <div class="weui-cells"></div>
 </div>

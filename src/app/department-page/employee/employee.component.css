@@ -1,0 +1,19 @@
+.department-employee-list-page{background: #f0f1f5;padding-bottom: 80px;max-width: 750px;}
+
+.search-result-header{background: #e7f3ff;text-align: center;height:120px;display: flex;align-items: center;text-align: center;}
+.search-result-header .box{flex: 1;}
+.search-result-header .title{font-size: 32px;color:#3391e9;}
+.search-result-header .sub{color:#999;font-size: 18px;}
+
+.weui-cells{margin-top: 0;}
+.avatar{border-radius: 50%;width: 46px;height: 46px;margin: 4px 10px 4px 0;float:left;}
+
+.rank{float: left;line-height: 45px;margin: 4px 8px 4px 0;font-size: 18px;color: #555;min-width: 20px;}
+.name{font-size: 18px;color: #555;}
+.total{color: #9f9f9f;font-size: 15px;position: relative;left: 4px;top: -2px;}
+.intro{font-size: 14px;color: #aaa;margin-top: -1px;}
+.point{font-size: 24px;color: #02bc00;}
+.lv{font-size: 12px;display: inline-block;background: #f8ad1c;color: #fff;padding: 0 4px;margin-left: 8px;position: relative;top: -3px;border-radius: 2px;}
+.point.orange{color: #fea606;border-radius: 20px;}
+
+.tips{font-size: 14px;color: #9b9b9b;line-height: 2.2;padding-left: 15px;}

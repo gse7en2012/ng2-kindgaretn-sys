@@ -1,5 +1,9 @@
-.bottom-nav{position: fixed;bottom:0;width: 100%;display: flex;left: 50%;background: #fafafa;border-top: 1px solid #e4e4e4;height:60px;z-index: 999;transform: translateX(-50%)}
-.bottom-nav a{flex:1;text-align: center;}
+.bottom-nav{position: fixed;bottom:0;width: 100%;left: 50%;background: #fafafa;border-top: 1px solid #e4e4e4;height:60px;z-index: 999;transform: translateX(-50%);display: flex;}
+.bottom-nav a{
+    /* float:left;width:33.33333%; */
+    text-align: center;
+    flex:1
+}
 .bottom-nav span{display: block;margin-bottom: 2px;color: #9b9b9b;font-size: 14px;}
 .bottom-nav .icon{display: block;width: 24px;margin: 10px auto 2px;}
 .bottom-nav .icon.cur{display: none;}

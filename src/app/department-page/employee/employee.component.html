@@ -1,0 +1,25 @@
+<div class="department-employee-list-page">
+  <div class="search-result-header">
+    <div class="box">
+      <p class="title">{{name}}</p>
+    </div>
+  </div>
+
+  <div class="weui-cells" infiniteScroll
+		    [infiniteScrollDistance]="2"
+		    [infiniteScrollThrottle]="300"
+		    (scrolled)="onScroll($event)">
+    <a class="weui-cell" *ngFor="let row of list;let i=index"  [routerLink]="['/home/personal/'+row.employee_id]">
+      <div class="weui-cell__hd">
+        <span class="rank">{{i+1}}</span>
+        <img [src]="row.employee_head_imgurl?row.employee_head_imgurl:'assets/img/avatar.png'" class="avatar">
+      </div>
+      <div class="weui-cell__bd">
+        <p class="name">{{row.employee_name}}<span class="lv">Lv.{{row.employee_level}}</span><span class="total">{{row.growthvalue_sum_value}}</span></p>
+      </div>
+      <div class="weui-cell__ft point orange">{{row.employee_growth_value?row.employee_growth_value:0}}</div>
+    </a>
+
+  </div>
+
+</div>

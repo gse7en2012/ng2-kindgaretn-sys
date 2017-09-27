@@ -1,0 +1,68 @@
+<div class="send-point-page">
+  <div class="send-point-header">
+    <div class="box">
+      <p class="title">批量赠送成长值</p>
+      <!-- <p class="sub">PRG自组织管理，幸福做教育</p> -->
+    </div>
+  </div>
+
+  <div class="weui-cells weui-cells_checkbox" *ngFor="let department of employeeList;let i=index" >
+    <div class="weui-cell">
+      <div class="weui-cell__hd"  (tap)="toggleList(department)">
+        <img class="icon" src="assets/img/document.png" *ngIf="department.is_hidde_list" >
+        <img class="icon" src="assets/img/document_open.png" *ngIf="!department.is_hidde_list" >
+      </div>
+      <div class="weui-cell__bd"  (tap)="toggleList(department)">
+        <p>{{department.department_name}}</p>
+      </div>
+      <div class="weui-cell__ft">
+        <a (tap)="chooseAllEmployee(department.employee_list)">全选</a>
+        <a (tap)="unChooseAllEmployee(department.employee_list)">反选</a>
+      </div>
+    </div>
+    <label class="weui-cell weui-check__label send-point-employee" *ngFor="let emp of department.employee_list;let i=index" [hidden]="department.is_hidde_list">
+        <div class="weui-cell__hd">
+            <input type="checkbox" class="weui-check" name="checkbox1" [checked]="emp.is_choose" (change)="changeEmp(department.employee_list,i)">
+            <i class="weui-icon-checked"></i>
+        </div>
+        <div class="weui-cell__bd">
+            <p>{{emp.employee_name}}</p>
+        </div>
+    </label>
+  </div>
+
+
+
+
+
+  <div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+      <div class="weui-cell__hd"><label class="weui-label">成长值</label></div>
+      <div class="weui-cell__bd">
+        <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入成长值" [(ngModel)]="growth">
+      </div>
+    </div>
+    <div class="weui-cell">
+      <div class="weui-cell__bd">
+        <textarea class="weui-textarea" placeholder="请输入送成长值说明" rows="4" [(ngModel)]="desc"></textarea>
+      </div>
+    </div>
+    <div class="weui-cell weui-cell_access" (click)="rankTypePicker()">
+      <div class="weui-cell__hd">
+        <img src="assets/img/sum/type.png" class="icon">
+      </div>
+      <div class="weui-cell__bd">
+        <p>{{rankType?rankType.label:'选择自定义配置项'}}</p>
+      </div>
+      <div class="weui-cell__ft"></div>
+    </div>
+  </div>
+  <div class="gseven-cells">
+    <div class="label" *ngFor="let label of labelList" (tap)="chooseLabel(label)" [class.choose]="label.is_choose">{{label.sendgrowthvaluelabel_name}}</div>
+  </div>
+
+  <a href="javascript:;" class="weui-btn weui-btn_primary" (tap)="sendGrowth()">确定赠送(剩余{{userInfo?.employee_usable_value}}点)</a>
+
+  <a href="javascript:;" class="weui-btn weui-btn_warning" (tap)="setGrowth()">转让成长值</a>
+
+</div>

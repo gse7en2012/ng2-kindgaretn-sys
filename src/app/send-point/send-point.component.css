@@ -1,0 +1,12 @@
+.send-point-page{background: #f0f1f5;margin-bottom: 80px;max-width: 750px;}
+
+.send-point-header{background: #e7f3ff;text-align: center;height:120px;display: flex;align-items: center;text-align: center;}
+.send-point-header .box{flex: 1;}
+.send-point-header .title{font-size: 32px;color:#3391e9;}
+.send-point-header .sub{color:#999;font-size: 18px;}
+
+.icon{width: 26px;height:26px;position: relative;top: 3px;margin-right: 10px;}
+
+.weui-cells_checkbox .weui-check:checked+.weui-icon-checked:before{color:#3391e8;}
+
+.label.choose{background: #3391e8;color:#fff;}

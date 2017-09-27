@@ -8,7 +8,7 @@
 #mine{margin-top: 0;margin-bottom: 15px;}
 .avatar{border-radius: 50%;width: 46px;height: 46px;margin: 4px 10px 4px 0;float:left;}
 
-.rank{float: left;line-height: 45px;margin: 4px 8px 4px 0;font-size: 18px;color: #555;}
+.rank{float: left;line-height: 45px;margin: 4px 8px 4px 0;font-size: 18px;color: #555;min-width: 20px;}
 .name{font-size: 18px;color: #555;}
 .total{color: #9f9f9f;font-size: 15px;position: relative;left: 4px;top: -2px;}
 .intro{font-size: 14px;color: #aaa;margin-top: -1px;}

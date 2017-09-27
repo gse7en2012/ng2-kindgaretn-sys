@@ -1,0 +1,16 @@
+<div class="timeline-page">
+  <div class="timeline-result-header">
+    <div class="box">
+      <p class="title">全部动态</p>
+    </div>
+  </div>
+
+  <div class="weui-cells">
+    <a class="weui-cell weui-cell_access" *ngFor="let record of timelineList;let i=index"  [routerLink]="['/home/personal/'+record.employee_id]">
+      <div class="weui-cell__bd">
+        <p>{{i+1}}.[{{record.growthvalue_recipient}}]{{record.growthvalue_note}}</p>
+      </div>
+      <div class="weui-cell__ft">+{{record.growthvalue_value}}</div>
+    </a>
+  </div>
+</div>

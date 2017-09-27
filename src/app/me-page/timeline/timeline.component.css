@@ -1,0 +1,11 @@
+.timeline-page{background: #f0f1f5;margin-bottom: 80px;max-width: 750px;}
+
+.timeline-result-header{background: #e7f3ff;text-align: center;height:120px;display: flex;align-items: center;text-align: center;}
+.timeline-result-header .box{flex: 1;}
+.timeline-result-header .title{font-size: 32px;color:#3391e9;}
+.timeline-result-header .sub{color:#999;font-size: 18px;}
+
+.weui-cells{margin-top: 0;}
+.weui-cell__bd{color: #555;font-size: 16px;}
+
+.weui-cell_access .weui-cell__ft{color:#fea606;font-size: 16px;}

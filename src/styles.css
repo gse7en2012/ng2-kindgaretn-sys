@@ -61,3 +61,14 @@ main{
 
 .weui-picker__action{color: #3391e9;}
 .weui-cell_access .weui-cell__ft:after{height: 8px;width: 8px;}
+.weui-cells{font-size: 16px;}
+.weui-btn{margin: 15px;}
+.weui-btn_primary{background-color: #56ba36;}
+.weui-btn_warning{background-color: #ff7e3d;}
+
+
+
+.gseven-cells{margin: 1%;margin-top: 1.17647059em;line-height: 1.47058824;font-size: 16px;overflow: hidden;position: relative;}
+.gseven-cells .label{float: left;width: 30%;margin:1.66667%;text-align: center;background: #fff;border: 1px solid #ddd;box-sizing: border-box;color: #555;padding: 3px 0;font-size: 15px;border-radius: 5px; }
+
+.weui-dialog__btn_primary{color:#3391e9 };

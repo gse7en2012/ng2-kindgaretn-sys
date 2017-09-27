@@ -1,0 +1,18 @@
+.growth-page{background: #f0f1f5;margin-bottom: 80px;max-width: 750px;}
+
+.growth-result-header{background: #e7f3ff;text-align: center;height:120px;display: flex;align-items: center;text-align: center;}
+.growth-result-header .box{flex: 1;}
+.growth-result-header .title{font-size: 32px;color:#3391e9;}
+.growth-result-header .sub{color:#999;font-size: 18px;}
+
+.weui-cells{margin-top: 0;}
+.weui-cell__bd{color: #555;font-size: 16px;}
+
+.weui-cell_access .weui-cell__ft{color:#fea606;font-size: 16px;}
+
+.cancel-btn{
+    color: red;
+    text-decoration: underline;
+    margin-left: 5px;
+    font-size: 90%;
+}

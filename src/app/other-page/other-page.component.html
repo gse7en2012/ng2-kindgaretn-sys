@@ -1,0 +1,126 @@
+<div class="other-page">
+  <div class="weui-cells" id="mine">
+    <div class="weui-cell">
+      <div class="weui-cell__hd">
+        <img [src]="userInfo?.employee_head_imgurl" class="avatar">
+      </div>
+      <div class="weui-cell__bd">
+        <p class="name">{{userInfo?.employee_name}}<span class="lv">Lv.{{userInfo?.employee_level}}</span></p>
+        <div class="weui-progress" id="exp-bar">
+          <div class="weui-progress__bar">
+            <div class="weui-progress__inner-bar js_progress" [style.width]="userInfo?.growth_percent"></div>
+          </div>
+        </div>
+        <p class="intro">还差{{userInfo?.level_need_growth_value}}点成长值升到下一级</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="weui-cells" id="list-1">
+    <div class="weui-cell weui-cell_access">
+      <div class="weui-cell__hd">
+        <img src="assets/img/me/department.png" class="icon">
+      </div>
+      <a class="weui-cell__bd" [routerLink]="['/me/department']">
+        <p>所在部门：{{userInfo?.employee_department_name}}</p>
+      </a>
+      <div class="weui-cell__ft"></div>
+    </div>
+    <div class="weui-cell ">
+      <div class="weui-cell__hd">
+        <img src="assets/img/me/rank.png" class="icon">
+      </div>
+      <div class="weui-cell__bd">
+        <p>总排名：{{userInfo?.employee_ranking}}</p>
+      </div>
+      <div class="weui-cell__ft"></div>
+    </div>
+    <div class="weui-cell ">
+      <div class="weui-cell__hd">
+        <img src="assets/img/me/growth.png" class="icon">
+      </div>
+      <div class="weui-cell__bd">
+        <p>成长值：{{userInfo?.employee_growth_value}}</p>
+      </div>
+      <div class="weui-cell__ft"></div>
+    </div>
+  </div>
+
+
+  <div class="weui-cells" id="list-2">
+    <div class="weui-cell weui-cell_access">
+      <div class="weui-cell__hd">
+        <img src="assets/img/me/gain.png" class="icon">
+      </div>
+      <a class="weui-cell__bd" [routerLink]="['/me/growth/gain/'+userInfo?.employee_id]">
+        <p>得点记录</p>
+      </a>
+      <div class="weui-cell__ft"></div>
+    </div>
+    <div class="weui-cell weui-cell_access">
+      <div class="weui-cell__hd">
+        <img src="assets/img/me/gift.png" class="icon">
+      </div>
+      <a class="weui-cell__bd" [routerLink]="['/me/growth/donor/'+userInfo?.employee_id]">
+        <p>开点记录</p>
+      </a>
+      <div class="weui-cell__ft"></div>
+    </div>
+  </div>
+
+
+
+  <div *ngIf="!isMyself">
+    <div class="weui-cells weui-cells_form">
+      <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">成长值</label></div>
+        <div class="weui-cell__bd">
+          <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入成长值" [(ngModel)]="growth">
+        </div>
+      </div>
+      <div class="weui-cell">
+        <div class="weui-cell__bd">
+          <textarea class="weui-textarea" placeholder="请输入送成长值说明" rows="4" [(ngModel)]="desc"></textarea>
+        </div>
+      </div>
+    </div>
+    <!-- 图片上传暂时隐藏 功能未做 -->
+    <!-- <div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+      <div class="weui-cell__bd">
+        <div class="weui-uploader">
+          <div class="weui-uploader__hd">
+            <p class="weui-uploader__title">图片上传</p>
+            <div class="weui-uploader__info">0/2</div>
+          </div>
+          <div class="weui-uploader__bd">
+            <ul class="weui-uploader__files" id="uploaderFiles">
+            </ul>
+            <div class="weui-uploader__input-box">
+              <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+    <div class="gseven-cells">
+      <div class="label" *ngFor="let label of labelList" (tap)="chooseLabel(label)" [class.choose]="label.is_choose">{{label.sendgrowthvaluelabel_name}}</div>
+    </div>
+
+    <a href="javascript:;" class="weui-btn weui-btn_primary" (tap)="sendGrowth()">送成长值给{{userInfo?.employee_name}}(剩余{{currentLoginUserInfo?.employee_usable_value}}点)</a>
+
+    <a href="javascript:;" class="weui-btn weui-btn_warning" (tap)="setGrowth()">给{{userInfo?.employee_name}}配点</a>
+
+  </div>
+  <div *ngIf="isMyself">
+    <div class="weui-cells">
+
+      <a href="javascript:;" class="weui-btn weui-btn_disabled weui-btn_default">不能给自己开成长值</a>
+
+    </div>
+  </div>
+</div>
